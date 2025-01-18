@@ -22,6 +22,11 @@ class Game {
         this.frozenTime = 0;
         this.setupEventListeners();
         this.spawnEnemies();
+        this.backgroundImage = new Image(); // Cria um novo objeto de imagem
+        this.backgroundImage.src = 'src/images/space.jpg'; // Defina o caminho para a sua imagem
+        this.backgroundImage.onload = () => {
+            console.log('Imagem de fundo carregada com sucesso!');
+        };
     }
 
     setupEventListeners() {
@@ -61,6 +66,14 @@ class Game {
                 this.targetEnemy = null;
             }
         });
+
+          // Evento para a barra de espaço
+    document.addEventListener('keydown', (event) => {
+        if (event.code === 'Space') {
+            console.log('Barra de espaço pressionada, concentrando a mira...');
+            this.targetEnemy = this.findClosestEnemy(); // Aqui você pode adicionar a lógica para concentrar a mira
+        }
+    });
 
         document.addEventListener('click', (event) => {
             if (this.gameStateManager.getState() === 'running') {
@@ -195,10 +208,17 @@ class Game {
     render() {
         if (this.gameStateManager.getState() === 'start') {
             this.renderer.clear();
+            // Desenhar a imagem de fundo
+            this.renderer.context.drawImage(this.backgroundImage, 0, 0, this.renderer.canvas.width, this.renderer.canvas.height);
+            // Desenhar o texto
             this.renderer.context.fillStyle = 'white';
             this.renderer.context.font = '30px Arial';
             this.renderer.context.fillText('Clique para começar', 250, 300);
         } else {
+            // Desenhar a imagem de fundo em todos os estados, se necessário
+            this.renderer.context.drawImage(this.backgroundImage, 0, 0, 800, 600);
+            
+            // Desenhar todas as entidades (projéteis, inimigos, jogador)
             this.renderer.render([...this.enemies, ...this.projectiles], this.player, this.smoothedDirection);
         }
     }
