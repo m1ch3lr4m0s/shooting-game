@@ -13,7 +13,7 @@ class Renderer {
     }
 
     drawEntity(entity) {
-        this.context.fillStyle = entity.color || 'white';
+        this.context.fillStyle = entity.color || 'white'; // Usar a cor do projétil
         this.context.beginPath();
         this.context.arc(entity.position.x, entity.position.y, entity.size / 2, 0, Math.PI * 2);
         this.context.fill();
@@ -21,8 +21,8 @@ class Renderer {
 
     render(entities, player, direction) {
         this.clear();
-        entities.forEach(entity => this.drawEntity(entity));
-        this.drawEntity(player);
+        entities.forEach(entity => this.drawEntity(entity)); // Desenhar todas as entidades
+        this.drawEntity(player); // Desenhar o jogador
     }
 }
 

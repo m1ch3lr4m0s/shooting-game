@@ -4,7 +4,7 @@ class Projectile {
         this.damage = damage;
         this.position = position;
         this.direction = direction;
-        this.size = 5; // Tamanho do projétil
+        this.size = 20; // Tamanho do projétil
         this.color = color;
     }
 

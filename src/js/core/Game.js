@@ -63,9 +63,8 @@ class Game {
         });
 
         document.addEventListener('click', (event) => {
-            if (this.gameStateManager.getState() === 'start') {
-                this.gameStateManager.startGame();
-            } else if (this.gameStateManager.getState() === 'running') {
+            if (this.gameStateManager.getState() === 'running') {
+                console.log('Clique detectado, disparando projétil...');
                 this.shootProjectile();
             }
         });
@@ -113,6 +112,7 @@ class Game {
         const projectileSpeed = 10;
         const projectile = new Projectile(projectileSpeed, 10, startPosition, direction);
         this.addProjectile(projectile);
+        this.projectiles.push(projectile);
         console.log('Projectile created:', projectile); // Log para verificar criação
     }
 
