@@ -2,15 +2,7 @@
 
 Bem-vindo ao **Shooting Game**! Um projeto emocionante que combina criatividade e tecnologia para oferecer uma experiência de jogo envolvente. Neste jogo, você terá a oportunidade de explorar um mundo dinâmico, enfrentar desafios e se divertir enquanto aprende sobre desenvolvimento de jogos. Estou em busca de desenvolvedores apaixonados para se juntarem a mim nesta jornada e contribuírem para a evolução deste projeto!
 Dê uma olhada no nosso vídeo que mostra o **Shooting Game** em ação! Neste vídeo, você poderá ver as funcionalidades atuais e o progresso do desenvolvimento.
-
-<!-- BEGIN YOUTUBE-CARDS -->
-<a href="https://youtu.be/VsJpHwUkQcM">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ytcards.demolab.com/?id=1lXaKEy97qE&title=GitHub+Star+Swag+Unboxing+and+Giveaways&lang=en&timestamp=1696868769&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=2&width=250&border_radius=5&duration=172">
-    <img src="https://ytcards.demolab.com/?id=1lXaKEy97qE&title=GitHub+Star+Swag+Unboxing+and+Giveaways&lang=en&timestamp=1696868769&background_color=%23ffffff&title_color=%2324292f&stats_color=%2357606a&max_title_lines=2&width=250&border_radius=5&duration=172" alt="Demonstração do Jodo" title="Demonstração do Jogo">
-  </picture>
-</a>
-<!-- END YOUTUBE-CARDS -->
+[![Captura de tela 2025-01-19 112658](https://github.com/user-attachments/assets/359249a3-21ba-4956-8603-b6753239629e)](https://youtu.be/VsJpHwUkQcM)
 
 ---
 
