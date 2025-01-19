@@ -1,7 +1,9 @@
 # 🎮 Apresentação
-
-Bem-vindo ao **Shooting Game**! Um projeto emocionante que combina criatividade e tecnologia para oferecer uma experiência de jogo envolvente. Neste jogo, você terá a oportunidade de explorar um mundo dinâmico, enfrentar desafios e se divertir enquanto aprende sobre desenvolvimento de jogos. Estou em busca de desenvolvedores apaixonados para se juntarem a mim nesta jornada e contribuírem para a evolução deste projeto!
+<p>
+  Bem-vindo ao **Shooting Game**! Um projeto emocionante que combina criatividade e tecnologia para oferecer uma experiência de jogo envolvente. Neste jogo, você terá a oportunidade de explorar um mundo dinâmico, enfrentar desafios e se divertir enquanto aprende sobre desenvolvimento de jogos. Estou em busca de desenvolvedores apaixonados para se juntarem a mim nesta jornada e contribuírem para a evolução deste projeto!
 Dê uma olhada no nosso vídeo que mostra o **Shooting Game** em ação! Neste vídeo, você poderá ver as funcionalidades atuais e o progresso do desenvolvimento.
+</p>
+
 [![Captura de tela 2025-01-19 112658](https://github.com/user-attachments/assets/359249a3-21ba-4956-8603-b6753239629e)](https://youtu.be/VsJpHwUkQcM)
 
 ---
