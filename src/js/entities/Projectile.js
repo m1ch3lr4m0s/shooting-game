@@ -4,14 +4,13 @@ class Projectile {
         this.damage = damage;
         this.position = position;
         this.direction = direction;
-        this.size = 20; // Tamanho do projétil
+        this.size = 5;
         this.color = color;
     }
 
     updatePosition() {
         this.position.x += this.direction.x * this.speed;
         this.position.y += this.direction.y * this.speed;
-        console.log('Posição do projétil atualizada:', this.position); // Log para verificar atualização
     }
 
     checkCollision(target) {
@@ -19,7 +18,7 @@ class Projectile {
             (this.position.x - target.position.x) ** 2 +
             (this.position.y - target.position.y) ** 2
         );
-        return distance < target.size;
+        return distance < (this.size + target.size);
     }
 }
 

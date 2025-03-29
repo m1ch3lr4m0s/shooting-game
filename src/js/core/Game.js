@@ -20,13 +20,13 @@ class Game {
         this.targetEnemy = null;
         this.isFrozen = false;
         this.frozenTime = 0;
+        this.score = 0;
+        this.level = 1;
         this.setupEventListeners();
         this.spawnEnemies();
-        this.backgroundImage = new Image(); // Cria um novo objeto de imagem
-        this.backgroundImage.src = 'src/images/space.jpg'; // Defina o caminho para a sua imagem
-        this.backgroundImage.onload = () => {
-            console.log('Imagem de fundo carregada com sucesso!');
-        };
+        this.backgroundImage = new Image();
+        this.backgroundImage.src = 'src/images/space.jpg';
+        this.backgroundImage.onload = () => {};
     }
 
     setupEventListeners() {
@@ -182,13 +182,19 @@ class Game {
         this.collisionManager.handleCollisions(this.projectiles, this.enemies);
 
         this.enemies.forEach((enemy, eIndex) => {
+            if (enemy.health <= 0) {
+                this.score += enemy instanceof FastEnemy ? 20 : enemy instanceof ColorChangingEnemy ? 30 : 10;
+                if (this.score >= this.level * 100) {
+                    this.level++;
+                }
+                this.enemies.splice(eIndex, 1);
+            }
             if (this.collisionManager.checkCollision(this.player, enemy)) {
                 if (enemy instanceof ColorChangingEnemy) {
-                    this.player.health = 0; // Morte instantânea
+                    this.player.health = 0;
                 } else {
                     this.player.takeDamage(10);
                 }
-                // Não remover o inimigo ao colidir com o jogador
             }
         });
 
@@ -196,7 +202,7 @@ class Game {
             if (projectile.checkCollision(this.player)) {
                 if (projectile.color === 'lightblue') {
                     this.isFrozen = true;
-                    this.frozenTime = 180; // Congelado por 3 segundos (60 FPS)
+                    this.frozenTime = 180;
                 } else {
                     this.player.takeDamage(projectile.damage);
                 }
@@ -208,18 +214,19 @@ class Game {
     render() {
         if (this.gameStateManager.getState() === 'start') {
             this.renderer.clear();
-            // Desenhar a imagem de fundo
             this.renderer.context.drawImage(this.backgroundImage, 0, 0, this.renderer.canvas.width, this.renderer.canvas.height);
-            // Desenhar o texto
             this.renderer.context.fillStyle = 'white';
             this.renderer.context.font = '30px Arial';
             this.renderer.context.fillText('Clique para começar', 250, 300);
         } else {
-            // Desenhar a imagem de fundo em todos os estados, se necessário
             this.renderer.context.drawImage(this.backgroundImage, 0, 0, 800, 600);
-            
-            // Desenhar todas as entidades (projéteis, inimigos, jogador)
             this.renderer.render([...this.enemies, ...this.projectiles], this.player, this.smoothedDirection);
+            
+            // Renderizar pontuação e nível
+            this.renderer.context.fillStyle = 'white';
+            this.renderer.context.font = '20px Arial';
+            this.renderer.context.fillText(`Pontuação: ${this.score}`, 10, 30);
+            this.renderer.context.fillText(`Nível: ${this.level}`, 10, 60);
         }
     }
 
